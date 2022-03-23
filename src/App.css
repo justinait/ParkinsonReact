@@ -10,12 +10,18 @@
   padding: 8px;
 }
 
-.leftHeader {
+.rightHeader {
   display: flex;
   flex-direction: row;
   width: 35%;
   align-items: center;
   justify-content: space-between;
+}
+
+.leftHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .leftHeader > img {
@@ -24,7 +30,7 @@
   border-radius: 33px;
 }
 
-.leftHeader>h3:hover {
+.rightHeader>h3:hover {
   background-color: rgb(221, 221, 221);
   padding: 5px;
   border-radius: 20px;
@@ -46,14 +52,16 @@
 }
 
 .gallery {
-  padding: 16px;
+  width: 80vw;
+  padding: 26px;
   -moz-column-width: 18em;
   -webkit-column-width: 14em;
+  margin:auto;
 }
 
 .painting{
   display: inline-block;
-  padding: .25rem;
+  padding: .45rem;
   width: 100%;
 }
 
