@@ -5,7 +5,6 @@ function Painting(props) {
     <div className="painting" >
         <img src={props.image} alt="painting" />
         <h5>{props.title}</h5>
-      
     </div>
   )
 }
