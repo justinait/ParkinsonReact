@@ -18,12 +18,7 @@ function Header() {
 
       <div className="rightHeader">
         {/*<Link to="/gallery">Gallery</Link>*/}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/gallery" element={<Gallery/>}/>
-            <Route path="/about" element={<About/>}/>
-          </Routes>
-        </BrowserRouter>
+        
       </div>
 
     </header>
