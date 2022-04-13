@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Painting from './Painting';
+import { db } from './firebase.js';
 
 function Gallery(props) {
-  
-    return (
+      
+    const [paintings, setPaintings] = useState([]);
+
+    useEffect(()=> {
+        db.collection("paintings").onSnapshot(s => {
+            setPaintings(s.docs.map(d => ({
+                id: d.id,
+                painting: d.data()
+            })))
+        })
+    }, [])
     
+    return (
         <div className='gallery'>
             {
-                props.paintings.map(({id, painting}) => (
+                paintings.map(({id, painting}) => (
                     <Painting
                     key={`painting-${id}`}
                     image = {painting.image}

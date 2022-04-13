@@ -16,10 +16,11 @@ function Header() {
         <h1 className='title'>Jorgelina Parkinson</h1>
       </div>
 
-      <div className="rightHeader">
+      <nav className="rightHeader">
         {/*<Link to="/gallery">Gallery</Link>*/}
+        <p>gallery</p>
         
-      </div>
+      </nav>
 
     </header>
 

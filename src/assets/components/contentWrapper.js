@@ -3,22 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './About.js';
 import { db } from './firebase.js';
 import Gallery from './Gallery.js';
+import Home from './Home.js';
 
 function ContentWrapper() {
-
-      
-    const [paintings, setPaintings] = useState([]);
-
-    useEffect(()=> {
-        db.collection("paintings").onSnapshot(s => {
-            setPaintings(s.docs.map(d => ({
-                id: d.id,
-                painting: d.data()
-            })))
-        })
-    }, [])
-
-
 
   return (
 
@@ -27,11 +14,13 @@ function ContentWrapper() {
         <BrowserRouter>
 
             <Routes>
-                <Route path="/gallery" >
-                    <Gallery data={paintings}/>
-                </Route>
-                <Route path="/gallery" element={<Gallery/>} />      {/* y mediante las props le paso los paintigns */}
+
+                <Route path="/" exact element={<Home/>}/>
+
+                <Route path="/gallery" element={<Gallery/> } />
+                
                 <Route path="/about" element={<About/>}/>
+
             </Routes>
 
         </BrowserRouter>
