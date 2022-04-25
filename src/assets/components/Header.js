@@ -1,10 +1,6 @@
 import React from 'react'
 import '../css/Header.css'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Home from './Home';
-import Gallery from './Gallery';
-import Contact from './Contact';
-import About from './About';
+import { BrowserRouter, Link, Outlet, Route, Routes } from 'react-router-dom'
 
 function Header() {
   return (
@@ -17,11 +13,9 @@ function Header() {
       </div>
 
       <nav className="rightHeader">
-        {/*<Link to="/gallery">Gallery</Link>*/}
-        <p>gallery</p>
-        
+        <Link to="/gallery">Gallery</Link>
+        <Link to="/about">About</Link>
       </nav>
-
     </header>
 
   )

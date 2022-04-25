@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color:black;
+}
+
+.about {
+    margin: 3%;
+}
+
+.cvPic {
+    width: 300px;
+}
+
+
+@media (min-width: 764px){
+    .about {
+        display: flex;
+    }
+    .cvDescription {
+        margin-left: 3%;
+    }
+}

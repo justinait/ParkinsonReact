@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import About from './About.js';
-import { db } from './firebase.js';
 import Gallery from './Gallery.js';
 import Home from './Home.js';
+import Layout from './Layout.js';
 
 function ContentWrapper() {
 
@@ -11,20 +11,28 @@ function ContentWrapper() {
 
     <div>
         
-        <BrowserRouter>
+      <BrowserRouter>
 
-            <Routes>
+        <Routes>
 
-                <Route path="/" exact element={<Home/>}/>
+          <Route path="/" element={<Layout />}>
 
-                <Route path="/gallery" element={<Gallery/> } />
-                
-                <Route path="/about" element={<About/>}/>
+            <Route index exact element={<Home/>}/>
 
-            </Routes>
+            <Route path="gallery" element={<Gallery/> } />
+            
+            <Route path="about" element={<About/>}/>
 
-        </BrowserRouter>
+            <Route path="*" element={<Navigate replace to="/" />} />
 
+          </Route>
+
+        </Routes>
+
+      </BrowserRouter>
+      
+      <Outlet />
+      
     </div>
 
   )
